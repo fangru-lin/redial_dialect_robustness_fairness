@@ -7,10 +7,10 @@ if [ -z "$1" ]; then
 fi
 
 COMMON_ARGS=" --n_choices 1 --temperature 0 --output_dir ../outputs"
-CODE_INPUT="--input_path ../redial/redial_gold/algorithm.json"
-LOGIC_INPUT="--input_path ../redial/redial_gold/logic.json"
-MATH_INPUT="--input_path ../redial/redial_gold/math.json"
-COMPREHENSIVE_INPUT="--input_path ../redial/redial_gold/comprehensive.json"
+CODE_INPUT="--input_path ../data/redial/redial_gold/algorithm.json"
+LOGIC_INPUT="--input_path ../data/redial/redial_gold/logic.json"
+MATH_INPUT="--input_path ../data/redial/redial_gold/math.json"
+COMPREHENSIVE_INPUT="--input_path ../data/redial/redial_gold/comprehensive.json"
 
 # Run each Python script with the provided arguments
 python3 eval_code.py $COMMON_ARGS "$@"
