@@ -2,6 +2,9 @@
 
 This is code repo for [One Language, Many Gaps: Evaluating Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks](https://arxiv.org/abs/2410.11005v1).
 
+# Website demo
+See a demo of our project [here](https://redial-demo.netlify.app/)!
+
 # Direct Use
 This is a reasoning dataset created by rewriting 7 existing benchmarks. The rewriting is conducted by human African American Vernacular English (AAVE) speakers, and quality check is conducted by both humans and language models. This could be used for research on testing language models' reasoning fairness and robustness towards AAVE users.
 
