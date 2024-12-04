@@ -19,7 +19,7 @@ You can view data in `data` folder.
 # Quick Start
 Clone this repo, and install environment by running:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.yaml
 ```
 
 Activate the environment, then you can run the following command to evaluate on the dataset:
