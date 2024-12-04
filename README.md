@@ -1,6 +1,7 @@
 # redial_eval
 
 This is code repo for [One Language, Many Gaps: Evaluating Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks](https://arxiv.org/abs/2410.11005v1).
+![ReDial](assets/egs.jpg)
 
 # Website demo
 See a demo of our project [here](https://redial-demo.netlify.app/)!
