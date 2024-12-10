@@ -3,6 +3,7 @@ import datetime as dt
 import json
 import os
 import numpy as np
+from evalplus.data import write_jsonl
 import re
 from utils.llm_call import *
 from tqdm import tqdm
@@ -323,6 +324,35 @@ def check_correctness_math(span: str,
             return 0
     except:
         return 0
+
+
+def decode_rephrased_gen(response: str,
+                         func_name: str):
+    '''
+    Decode the rephrased generation
+        Parameters:
+            response (str): rephrased generation
+            func_name (str): function name
+        Returns:
+            decoded_response (str): decoded response
+    '''
+    try:
+        decoded_response = response.replace('python_function', func_name)
+        return decoded_response
+    except:
+        return None
+
+
+def format_save_code_to_eval(outputs: list[dict],
+                             function_names: list[str],
+                             task_ids: list[str],
+                             save_path: str,):
+    outputs_to_eval = [{'task_id':task_ids[j], 'solution':decode_rephrased_gen(output['parsed_answer'], function_names[j])} for j, output in enumerate(outputs)]
+    full_outputs_to_eval = [{'task_id':task_ids[j], 'solution':decode_rephrased_gen(output['response'], function_names[j])} for j, output in enumerate(outputs)]
+    write_jsonl(save_path.replace('.json', f'_humaneval_to_eval.jsonl'), outputs_to_eval[:164])
+    write_jsonl(save_path.replace('.json', f'_humaneval_to_eval_unparsed.jsonl'), full_outputs_to_eval[:164])
+    write_jsonl(save_path.replace('.json', f'_mbpp_to_eval.jsonl'), outputs_to_eval[164:])
+    write_jsonl(save_path.replace('.json', f'_mbpp_to_eval_unparsed.jsonl'), full_outputs_to_eval[164:])
 
 
 def clean_code(answer):
