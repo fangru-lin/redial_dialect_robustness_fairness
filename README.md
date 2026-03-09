@@ -1,6 +1,6 @@
 # redial_eval
 
-This is code repo for [One Language, Many Gaps: Evaluating Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks](https://arxiv.org/abs/2410.11005v1).
+This is code repo for ACL-2025 main paper [Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks](https://aclanthology.org/2025.acl-long.317/).
 ![ReDial](assets/egs.jpg)
 
 # Website demo
